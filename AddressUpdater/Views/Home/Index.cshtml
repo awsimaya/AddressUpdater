@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Address Update</h1>
+</div>
+<hr />
+
+<div>
+    <form class="form-group" method="post" id="update_address">
+        <div class="form-group">
+            <label for="firstName">Your first name</label>
+            <input type="text" id="firstName" name="firstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Your last name</label>
+            <input type="text" id="lastName" name="lastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" class="form-control" />
+        </div>
+
+        <input type="submit" id="submitform" name="submitform" class="btn-primary" value="Update address" />
+    </form>
+</div>
+
+@if (ViewData["status"] != null)
+{
+<div>
+    @if (ViewData["status"].ToString() == "success")
+    {
+    <label class="alert-success" id="statusmessage">Address updated successfully.</label>
+    }
+    else if (ViewData["status"].ToString() == "failure")
+    {
+    <label class="alert-danger" id="statusmessage">Unable to update address.</label>
+    }
+</div>
+}

@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateStatus";
+}
+
+<h1>UpdateStatus</h1>
+@if (ViewData["status"] != null)
+{
+    <p class="alert-success" id="statusmessage">Address updated successfully in @ViewData["delay"] seconds.</p>
+}
+
